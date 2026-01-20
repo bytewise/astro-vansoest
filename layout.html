@@ -11,14 +11,14 @@
   <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="assets/css/linearicons32d4.css?5daac7af49">
-  <link rel="stylesheet" href="assets/css/font-awesome.minf022.css?c620987d3c">
-  <link rel="stylesheet" href="assets/css/bootstrapeddf.css?a3289fcdc4">
-  <link rel="stylesheet" href="assets/css/magnific-popupf038.css?daa7a85d10">
-  <link rel="stylesheet" href="assets/css/nice-select9ca7.css?2a46686567">
-  <link rel="stylesheet" href="assets/css/animate.min39e0.css?2a867f3357">
-  <link rel="stylesheet" href="assets/css/owl.carousel035b.css?6afa49b08b">
-  <link rel="stylesheet" href="assets/css/main6c9f.css?56bffe71c9">
+  <link rel="stylesheet" href="/assets/css/linearicons32d4.css?5daac7af49">
+  <link rel="stylesheet" href="/assets/css/font-awesome.minf022.css?c620987d3c">
+  <link rel="stylesheet" href="/assets/css/bootstrapeddf.css?a3289fcdc4">
+  <link rel="stylesheet" href="/assets/css/magnific-popupf038.css?daa7a85d10">
+  <link rel="stylesheet" href="/assets/css/nice-select9ca7.css?2a46686567">
+  <link rel="stylesheet" href="/assets/css/animate.min39e0.css?2a867f3357">
+  <link rel="stylesheet" href="/assets/css/owl.carousel035b.css?6afa49b08b">
+  <link rel="stylesheet" href="/assets/css/main6c9f.css?56bffe71c9">
 </head>
 <body>
 
@@ -49,11 +49,11 @@
                 <div class="navbar-menu" id="navbar-toggle">
                   <div class="navbar-start">
                     <ul class="nav-menu">
-                      <li><a href="index.html" title="This is the first menu item." class="first">Home</a></li>
-                      <li><a href="over-ons.html">Over ons</a></li>
-                      <li><a href="aan-verbouw.html">Aan/verbouw</a></li>
-                      <li><a href="renovatie.html">Renovatie</a></li>
-                      <li><a href="nieuwbouw.html">Nieuwbouw</a></li>
+                      <li><a href="/" title="This is the first menu item." class="first">Home</a></li>
+                      <li><a href="/over-ons/">Over ons</a></li>
+                      <li><a href="/aan-verbouw/">Aan/verbouw</a></li>
+                      <li><a href="/renovatie/">Renovatie</a></li>
+                      <li><a href="/nieuwbouw/">Nieuwbouw</a></li>
                     </ul>
                     <script>
                       // Highlight active nav item by adding 'menu-active' class to matching link
@@ -69,9 +69,11 @@
                             href = href.replace(/^\.\//,'');
                             // strip trailing slash
                             href = href.replace(/\/$/,'');
+                            // remove leading and trailing slashes
+                            href = href.replace(/^\//,'').replace(/\/$/, '');
                             // remove .html extension
                             href = href.replace(/\.html$/,'');
-                            return href;
+                            return href || 'index';
                           };
 
                           var links = document.querySelectorAll('.nav-menu a');
@@ -142,22 +144,22 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="assets/js/vendor/jquery-2.2.4.min.js"></script>
+  <script src="/assets/js/vendor/jquery-2.2.4.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-  <script src="assets/js/vendor/bootstrap.min.js"></script>
-  <script src="assets/js/easing.min.js"></script>
-  <script src="assets/js/hoverIntent.js"></script>
-  <script src="assets/js/superfish.min.js"></script>
-  <script src="assets/js/jquery.ajaxchimp.min.js"></script>
-  <script src="assets/js/jquery.magnific-popup.min.js"></script>
-  <script src="assets/js/owl.carousel.min.js"></script>
-  <script src="assets/js/jquery.sticky.js"></script>
-  <script src="assets/js/jquery.nice-select.min.js"></script>
-  <script src="assets/js/parallax.min.js"></script>
-  <script src="assets/js/waypoints.min.js"></script>
-  <script src="assets/js/jquery.counterup.min.js"></script>
-  <script src="assets/js/mail-script.js"></script>
-  <script src="assets/js/main.js"></script>
+  <script src="/assets/js/vendor/bootstrap.min.js"></script>
+  <script src="/assets/js/easing.min.js"></script>
+  <script src="/assets/js/hoverIntent.js"></script>
+  <script src="/assets/js/superfish.min.js"></script>
+  <script src="/assets/js/jquery.ajaxchimp.min.js"></script>
+  <script src="/assets/js/jquery.magnific-popup.min.js"></script>
+  <script src="/assets/js/owl.carousel.min.js"></script>
+  <script src="/assets/js/jquery.sticky.js"></script>
+  <script src="/assets/js/jquery.nice-select.min.js"></script>
+  <script src="/assets/js/parallax.min.js"></script>
+  <script src="/assets/js/waypoints.min.js"></script>
+  <script src="/assets/js/jquery.counterup.min.js"></script>
+  <script src="/assets/js/mail-script.js"></script>
+  <script src="/assets/js/main.js"></script>
 
   <script>
     /*
@@ -167,7 +169,7 @@
     (function() {
       var p = location.pathname.split('/').pop() || 'index.html';
       var name = p === '' ? 'index' : p.replace('.html', '');
-      var url = 'pages/' + name + '.content.html';
+      var url = '/pages/' + name + '.content.html';
 
       function initParallax() {
         if (window.jQuery && typeof jQuery.fn.parallax === 'function') {
