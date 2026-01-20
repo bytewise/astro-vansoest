@@ -6,12 +6,10 @@
     <title>van Soest bouw</title>
     <script>
       (function(){
-        // Ensure layout is loaded and then let layout loader inject page fragment
-        fetch('layout.html').then(function(r){ if(!r.ok) throw new Error('layout fetch failed'); return r.text(); }).then(function(html){
-          document.open(); document.write(html); document.close();
-        }).catch(function(e){
-          console.error(e); document.body.innerHTML = '<p>Could not load layout.</p>';
-        });
+        fetch('layout.html')
+          .then(function(r){ if(!r.ok) throw new Error('layout fetch failed'); return r.text(); })
+          .then(function(html){ document.open(); document.write(html); document.close(); })
+          .catch(function(e){ console.error(e); document.body.innerHTML = '<p>Could not load layout.</p>'; });
       })();
     </script>
   </head>
