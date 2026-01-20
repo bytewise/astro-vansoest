@@ -15,19 +15,19 @@
 	<meta charset="UTF-8">
 	<!-- Site Title -->
 	<title>van Soest bouw</title>
-	
-	<link href="../fonts.googleapis.com/cssff8c.css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
+
+	<link href="../fonts.googleapis.com/cssff8c.css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
 		<!--
 		CSS
-		============================================= -->     
-		<link rel="stylesheet" href="theme/vansoest/css/linearicons32d4.css?5daac7af49">
-		<link rel="stylesheet" href="theme/vansoest/css/font-awesome.minf022.css?c620987d3c">
-		<link rel="stylesheet" href="theme/vansoest/css/bootstrapeddf.css?a3289fcdc4">
-		<link rel="stylesheet" href="theme/vansoest/css/magnific-popupf038.css?daa7a85d10">
-		<link rel="stylesheet" href="theme/vansoest/css/nice-select9ca7.css?2a46686567">
-		<link rel="stylesheet" href="theme/vansoest/css/animate.min39e0.css?2a867f3357">
-		<link rel="stylesheet" href="theme/vansoest/css/owl.carousel035b.css?6afa49b08b">
-		<link rel="stylesheet" href="theme/vansoest/css/main6c9f.css?56bffe71c9">
+		============================================= -->
+		<link rel="stylesheet" href="assets/css/linearicons32d4.css?5daac7af49">
+		<link rel="stylesheet" href="assets/css/font-awesome.minf022.css?c620987d3c">
+		<link rel="stylesheet" href="assets/css/bootstrapeddf.css?a3289fcdc4">
+		<link rel="stylesheet" href="assets/css/magnific-popupf038.css?daa7a85d10">
+		<link rel="stylesheet" href="assets/css/nice-select9ca7.css?2a46686567">
+		<link rel="stylesheet" href="assets/css/animate.min39e0.css?2a867f3357">
+		<link rel="stylesheet" href="assets/css/owl.carousel035b.css?6afa49b08b">
+		<link rel="stylesheet" href="assets/css/main6c9f.css?56bffe71c9">
 	<meta name="generator" content="Bolt">
 </head>
 <body>
@@ -118,22 +118,22 @@
 </footer>
 <!-- End footer Area -->
 
-		<script src="theme/vansoest/js/vendor/jquery-2.2.4.min.js"></script>
+		<script src="assets/js/vendor/jquery-2.2.4.min.js"></script>
 		<script src="../cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-		<script src="theme/vansoest/js/vendor/bootstrap.min.js"></script>
-		<script src="theme/vansoest/js/easing.min.js"></script>
-		<script src="theme/vansoest/js/hoverIntent.js"></script>
-		<script src="theme/vansoest/js/superfish.min.js"></script>
-		<script src="theme/vansoest/js/jquery.ajaxchimp.min.js"></script>
-		<script src="theme/vansoest/js/jquery.magnific-popup.min.js"></script>
-		<script src="theme/vansoest/js/owl.carousel.min.js"></script>
-		<script src="theme/vansoest/js/jquery.sticky.js"></script>
-		<script src="theme/vansoest/js/jquery.nice-select.min.js"></script>
-		<script src="theme/vansoest/js/parallax.min.js"></script>
-		<script src="theme/vansoest/js/waypoints.min.js"></script>
-		<script src="theme/vansoest/js/jquery.counterup.min.js"></script>
-		<script src="theme/vansoest/js/mail-script.js"></script>
-		<script src="theme/vansoest/js/main.js"></script>
+		<script src="assets/js/vendor/bootstrap.min.js"></script>
+		<script src="assets/js/easing.min.js"></script>
+		<script src="assets/js/hoverIntent.js"></script>
+		<script src="assets/js/superfish.min.js"></script>
+		<script src="assets/js/jquery.ajaxchimp.min.js"></script>
+		<script src="assets/js/jquery.magnific-popup.min.js"></script>
+		<script src="assets/js/owl.carousel.min.js"></script>
+		<script src="assets/js/jquery.sticky.js"></script>
+		<script src="assets/js/jquery.nice-select.min.js"></script>
+		<script src="assets/js/parallax.min.js"></script>
+		<script src="assets/js/waypoints.min.js"></script>
+		<script src="assets/js/jquery.counterup.min.js"></script>
+		<script src="assets/js/mail-script.js"></script>
+		<script src="assets/js/main.js"></script>
 
 <script>
 // Simple client-side layout loader: loads pages/<name>.content.html into #content
@@ -146,6 +146,17 @@
     // set title from first h1 if present
     var m = html.match(/<h1[^>]*>([^<]+)<\/h1>/i);
     if(m) document.title = m[1].trim() + ' | van Soest bouw';
+    // initialize parallax for dynamically loaded content
+    if(window.jQuery && typeof jQuery.fn.parallax === 'function'){
+      try{ jQuery('[data-parallax="scroll"]').parallax(); }catch(e){ console.warn('parallax init failed', e); }
+    } else {
+      // if jQuery isn't ready yet, try again shortly
+      setTimeout(function(){
+        if(window.jQuery && typeof jQuery.fn.parallax === 'function'){
+          try{ jQuery('[data-parallax="scroll"]').parallax(); }catch(e){ console.warn('parallax init failed', e); }
+        }
+      }, 100);
+    }
   }).catch(function(){
     console.warn('Content not found: '+url);
   });
