@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 import image from '@astrojs/image';
 
 export default defineConfig({
-  integrations: [image({ service: 'sharp' })],
+  integrations: [image({ serviceEntryPoint: '@astrojs/image/sharp' })],
   experimental: {
     viewTransitions: true,
   },
