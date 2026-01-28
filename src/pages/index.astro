@@ -15,6 +15,8 @@ import { Picture } from '@astrojs/image/components'
     height={910}
     width={1400}
     aspectRatio={1400/910}
+    loading="eager"
+    fetchpriority="high"
     priority={true}
   />
   <link rel="preload" as="image" href="/assets/img/header-bg.jpg">
