@@ -13,6 +13,9 @@ import { Picture } from '@astrojs/image/components'
         height={910}
         aspectRatio={4/1}
         alt="Nieuwbouw"
+        loading="eager"
+        fetchpriority="high"
+        priority={true}
     />
     <div class="overlay-bg overlay"></div>
   <div class="container">
