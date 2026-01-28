@@ -1938,7 +1938,7 @@ h6 {
 }
 
 /* Disable header/nav transitions for instant page switches */
-#header, #nav-menu-container, .nav-menu, .nav-menu a, .navbar-menu { transition: none !important; }
+#header, .nav-menu, .nav-menu a, .navbar-menu { transition: none !important; }
 
 
 #logo {
@@ -1987,6 +1987,45 @@ h6 {
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
+
+/* overlay */
+#mobile-body-overly {
+    position: fixed;
+    inset: 0; background: rgba(0,0,0,0.5);
+    z-index: 1090;
+    display: none;
+}
+
+/* mobile slide-in nav */
+@media (max-width: 800px) {
+  /* hide original desktop nav (if you want) */
+  .desktop-nav {
+      display: none !important;
+  }
+
+  #nav-menu-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 260px;
+    max-width: 80%;
+    background: #fff;
+    z-index: 1100;
+    transform: translateX(-100%);
+    transition: transform 1000ms ease;
+    box-shadow: 2px 0 12px rgba(0,0,0,0.12);
+    overflow-y: auto;
+  }
+  /* visible state */
+  #nav-menu-container.open { transform: translateX(0); }
+
+  /* make sure menu content is visible and nicely padded */
+  #nav-menu-container .navbar-menu { display: block; padding: 1rem; }
+
+
+
+
 /* Nav Menu Essentials */
 .nav-menu,
 .nav-menu * {
@@ -2008,9 +2047,9 @@ h6 {
   white-space: nowrap;
 }
 
-.nav-menu>li {
+/*.nav-menu>li {
   float: left;
-}
+}*/
 
 .nav-menu li:hover>ul,
 .nav-menu li.sfHover>ul {
@@ -2026,6 +2065,7 @@ h6 {
   min-width: 180px;
   text-align: left;
 }
+
 
 /* Nav Menu Arrows */
 .sf-arrows .sf-with-ul {
@@ -2075,13 +2115,42 @@ h6 {
 
 .navbar-burger {
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 30px;
-  height: 30px;
-  background: orange;
+  border:none;
+  top: 1rem;
+  right: 1rem;
+  width: 2.5em;
+  height: 2.5em;
+  background: transparent;
+  color: #222222;
   z-index: 9999;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline:0;
 }
+
+.navbar-burger svg {
+    fill: currentColor;
+}
+
+.navbar-burger:focus {
+    border:none;
+    outline:0 !important;
+}
+
+.navbar-burger.is-active .open {
+    display:none;
+}
+
+.navbar-burger.is-active .close {
+    display:block;
+}
+
+.navbar-burger .close {
+    display:none;
+}
+
 
 /* Nav Meu Styling */
 .nav-menu a {
